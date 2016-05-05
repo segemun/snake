@@ -1,0 +1,31 @@
+#playingField {
+    position: absolute;
+    border: 1px solid silver;
+}
+#playingField .scores {
+    font-size: 24px;
+    color: green;
+    font-weight: bold;
+}
+.row div {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid silver;
+}
+.row div.active {
+    background: red;
+    border: 1px solid red;
+}
+.row div.active.head {
+    width: 20px;
+    height: 20px;
+    background: red;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.row div.food {
+    background: blue;
+    border: 1px solid blue;
+}
