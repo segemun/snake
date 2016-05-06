@@ -156,7 +156,7 @@
       }
       nextElement = getCeil(rowNumber, ceilNumber);
       if (nextElement.classList.contains('active')
-          && nextElement.classList.contains('tail') === -1) {
+          && !nextElement.classList.contains('tail')) {
         gameOver();
         return;
       } else if (nextElement.classList.contains('food')) {
