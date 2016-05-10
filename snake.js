@@ -76,7 +76,7 @@
     let redrawSnake = () => {
       let activeCeils = document.querySelectorAll('.active');
       if (activeCeils !== null) {
-        for (let i = 0; i < activeCeils.length; i++) {
+        for (let i = 0, length = activeCeils.length; i < length; i++) {
             activeCeils[i].classList.remove('active');
             activeCeils[i].classList.remove('tail');
             activeCeils[i].classList.remove('head');
@@ -85,7 +85,7 @@
       drawSnake();
     }
     let drawSnake = () => {
-      for (let i = 0; i < snakeElements.length; i++) {
+      for (let i = 0, length = snakeElements.length; i < length; i++) {
         snakeElements[i].classList.add('active');
         if (i == snakeElements.length - 1) {
           snakeElements[i].classList.add('head');
@@ -97,7 +97,7 @@
     
     let redrawFood = () => {
       var foodElements = document.querySelectorAll('.food');
-      for (let i = 0; i < foodElements.length; i++) {
+      for (let i = 0, length = foodElements.length; i < length; i++) {
         foodElements[i].classList.remove('food');
       }
       drawFood();
