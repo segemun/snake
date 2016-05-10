@@ -15,8 +15,8 @@
       interval,
       scores;
           
-    self.init = (customSettings = false) => {
-      settings = customSettings && Object.assign(settings, customSettings);
+    self.init = (customSettings = {}) => {
+      settings = Object.assign(settings, customSettings);
       redrawPlayingField();
       setDefaultParams();
       setListeners();
