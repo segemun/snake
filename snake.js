@@ -1,7 +1,12 @@
 (function(){
   var Snake = function(){
     let self = this,
-      availableKeys = ['Right', 'Down', 'Left', 'Up'],
+      availableKeys = {
+        ArrowRight: 'Right',
+        ArrowDown: 'Down',
+        ArrowLeft: 'Left',
+        ArrowUp: 'Up'
+      },
       settings = {
         fieldElementId: 'playingField',
         fieldWidth: 10,
@@ -61,12 +66,12 @@
     }
   
     let setListeners = () => {
-      document.addEventListener('keydown', keydownListener);
+      window.addEventListener('keydown', keydownListener);
     }
       
     let keydownListener = event => {
-      if (availableKeys.indexOf(event.keyIdentifier) !== -1) {
-        direction = event.keyIdentifier;
+      if (availableKeys[event.code] !== 'undefined') {
+        direction = availableKeys[event.code];
         runStep();
         clearInterval(interval);
         run();
@@ -191,10 +196,11 @@
     
     return self;
   }
-  
-  var game = new Snake();
-  game.init({
-    fieldWidth: 20,
-    fieldHeight: 20
-  });
+  window.onload = function(){
+    var game = new Snake();
+    game.init({
+      fieldWidth: 20,
+      fieldHeight: 20
+    });
+  }
 })();
