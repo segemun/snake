@@ -15,7 +15,7 @@
       },
       previousElement,
       snakeElements,
-      foodElement,
+      foodElements,
       direction,
       interval,
       scores;
